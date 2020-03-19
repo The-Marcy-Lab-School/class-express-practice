@@ -1,0 +1,26 @@
+<%- include('./partials/header.ejs') %>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="five columns"><h1><%= book.title %></h1></div>
+      <div class="five columns"><a href="/" class="button">Back</a></div>
+    </div>
+    <div class="row">
+      <div class="ten columns">
+        <figure>
+          <img src="<%= book.imageURL %>" alt="Book Cover">
+          <figcaption>
+            <h4>By: <%= book.author %></h4>
+          </figcaption>
+        </figure>
+
+        <p><%= book.description %></p>
+        <footer>
+          <p><%= book.dateAdded %></p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

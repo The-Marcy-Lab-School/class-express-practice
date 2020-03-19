@@ -1,5 +1,5 @@
 class Book {
-  constructor(title, author, description, imageURL) {
+  constructor(title, author, imageURL, description) {
     this.id = ++Book.count;
     this.title = title;
     this.author = author;
@@ -11,7 +11,4 @@ class Book {
 
 Book.count = 0;
 
-module.exports = {
-  magicNumber: 100,
-  Book: Book
-};
+module.exports = Book; 

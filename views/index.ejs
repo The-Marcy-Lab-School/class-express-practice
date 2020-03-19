@@ -1,0 +1,37 @@
+<%- include('./partials/header.ejs') %>
+<body>
+  <div class="container">
+    <div class="row">
+      <header>
+        <div class="six columns"><h1>Book List</h1></div>
+        <div class="six columns"><a href="/add" class="button">Add Book</a></div> 
+      </header>
+    </div>
+    <!-- START OF OUR CARD -->
+    <% for (let id in books) {%>
+      <div class="row">
+        <div class="eight columns">
+          <div class="row">
+            <figure>
+              <img src=<%= books[id].imageURL %> alt="placeholder">
+              <figcaption><%= books[id].title %></figcaption>
+            </figure>
+          </div>
+          <div class="row">
+            <div class="six columns">
+              <a href="/books/<%= id %>" class="button primary">View Book</a>
+            </div>
+            <div class="six columns">
+              <form action="/delete/<%= id %>" method="post">
+                <input type="submit" value="Delete Book">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+    <!-- END OF OUR CARD -->
+  </div>
+  
+</body>
+</html>
